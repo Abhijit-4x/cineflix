@@ -36,11 +36,11 @@ const Movie = ({item})=> {
 
         <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2 my-1">
             <img className="w-full block" src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`} alt={item?.title} />
-            <div className="absolute w-full h-full top-0 left-0 text-white opacity-100 bg-black/30  lg:hover:bg-black/80 lg:hover:opacity-80 p-2">
+            <div className="absolute w-full h-full top-0 left-0 text-white opacity-100 lg:opacity-0 bg-black/30  lg:hover:bg-black/80 lg:hover:opacity-80 p-2">
                 <Link to='/play' >
                     <p className="whitespace-normal h-full flex justify-center items-center text-xs md:text-sm font-bold" >{item?.title}</p>
                 </Link>
-                <p className="absolute top-4 left-4 text-gray-300 text-sm md:text-lg" onClick={saveMovie} >{like ? <FaHeart /> : <FaRegHeart /> }</p>
+                <p className="absolute  scale-[1.5] lg:scale-[1.2] top-4 left-4 text-gray-300 text-sm md:text-lg" onClick={saveMovie} >{like ? <FaHeart /> : <FaRegHeart /> }</p>
             </div>
         </div>
     )
