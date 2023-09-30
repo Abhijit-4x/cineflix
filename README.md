@@ -27,7 +27,7 @@ Cineflix is a modern online streaming platform that allows users to watch a wide
 
 ## Demo
 
-Explore the live demo of Cineflix at 
+Explore the live demo of Cineflix at https://cineflix-react-4735c.web.app
 ## Getting Started
 
 To run Cineflix locally for development or testing purposes, follow these steps:
