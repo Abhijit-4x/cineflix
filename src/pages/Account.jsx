@@ -50,13 +50,13 @@ const Account = () => {
             
               {movies.map((item, id) => (
                 <div key={id} className="w-full h-auto cursor-pointer relative p-[1vw] my-1 ">
-                    <Link to='/play'><img className="w-[20vw] object-cover rounded inline-block" src={`https://image.tmdb.org/t/p/w500/${item?.img}`} alt={item?.title} /></Link>
-                    <div className="absolute inline-block p-[1vw] w-[78vw]">
+                    <Link to='/play'><img className="w-[40vw] lg:w-[20vw] object-cover rounded inline-block" src={`https://image.tmdb.org/t/p/w500/${item?.img}`} alt={item?.title} /></Link>
+                    <div className="absolute inline-block p-[1vw] w-[58vw] lg:w-[78vw] ">
                       <div className='flex flex-col '>
                         <div className='flex justify-between' >
                           <Link to='/play'><p className="white-space-normal text-sm sm:text-xl md:text-3xl font-bold items-center  h-full text-center mb-2" >{item?.title}</p></Link>
                           <button 
-                            className="white-space-normal text-sm sm:text-xl md:text-xl items-center h-full text-center mb-2 border border-white rounded p-[0.3rem]
+                            className="white-space-normal text-sm sm:text-xl md:text-xl items-center h-full text-center scale-[0.7] lg:scale-[1] mt-[-0.2rem] lg:mt-[-1rem] mb-2 border text-gray-400 border-white rounded p-[0.3rem]
                             hover:border-red-400 hover:text-red-400 bg-none" 
                             onClick={()=>{ deleteShow(item?.id) }}
                             >
@@ -64,7 +64,7 @@ const Account = () => {
                           </button>
                         </div>
                         <p className="white-space-normal text-xs sm:text-sm md:text-md text-gray-500 items-center justify-left h-full text-left" >Release :{item?.date}</p>
-                        <p className="white-space-normal text-sm sm:text-md md:text-xl text-gray-200 items-center  h-full text-left py-5" >{item?.overview}</p>
+                        <p className="white-space-normal text-sm sm:text-md md:text-xl text-gray-200 items-center  h-full text-left py-1 lg:py-5 truncate" >{item?.overview}</p>
                       </div>
                     </div>
                 </div>
