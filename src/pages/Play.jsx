@@ -5,8 +5,8 @@ const Play = () => {
   return (
     <>
         <div className='flex flex-col'>
-            <div className='fixed w-full h-[10vh] bg-gray-900'></div>
-            <div className='w-full h-[60vh] md:h-[80vh] bg-gray-800'>
+            <div className='fixed w-full h-[10svh] bg-gray-900'></div>
+            <div className='w-full h-[60svh] md:h-[80vh] bg-gray-800'>
                 {/* <video controls autoPlay src='' className='w-full h-full object:cover'/> */}
                 <iframe 
                   className='w-full h-full object-cover'

@@ -32,6 +32,29 @@ const Account = () => {
   }
 
 
+  const truncateString = ( str) => {
+
+    let num = 100;
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      // true for mobile device
+      num = 50;
+      console.log('mobiel mode---------------')
+    }else{
+      // false for not mobile device
+      num = 180;
+    }
+
+    if(str?.length > num){
+        return str.slice(0, num) + '....'
+    }else{
+        return str
+    }
+  }
+
+
+
+
+
 
 
   return (
@@ -56,15 +79,17 @@ const Account = () => {
                         <div className='flex justify-between' >
                           <Link to='/play'><p className="white-space-normal text-sm sm:text-xl md:text-3xl font-bold items-center  h-full text-center mb-2" >{item?.title}</p></Link>
                           <button 
-                            className="white-space-normal text-sm sm:text-xl md:text-xl items-center h-full text-center scale-[0.7] lg:scale-[1] mt-[-0.2rem] lg:mt-[-1rem] mb-2 border text-gray-400 border-white rounded p-[0.3rem]
-                            hover:border-red-400 hover:text-red-400 bg-none" 
+                            className="white-space-normal text-sm sm:text-xl md:text-xl items-center h-full text-center scale-[0.7] lg:scale-[1] mt-[-0.2rem] lg:mt-[-1rem] mb-2 border text-gray-400 border-gray-400 rounded p-[0.3rem]
+                            hover:border-red-300 hover:text-red-300 bg-none" 
                             onClick={()=>{ deleteShow(item?.id) }}
                             >
                               Remove
                           </button>
                         </div>
                         <p className="white-space-normal text-xs sm:text-sm md:text-md text-gray-500 items-center justify-left h-full text-left" >Release :{item?.date}</p>
-                        <p className="white-space-normal text-sm sm:text-md md:text-xl text-gray-200 items-center  h-full text-left py-1 lg:py-5 truncate" >{item?.overview}</p>
+                        <p className="white-space-normal overflow-hidden text-sm sm:text-sm md:text-xl text-gray-200 items-center  h-full text-left pt-1 lg:py-5 " >
+                          {truncateString(item?.overview)}
+                        </p>
                       </div>
                     </div>
                 </div>

@@ -14,8 +14,19 @@ const Navbar = () =>{
         }
     }
 
+    window.addEventListener('scroll', ()=>{
+        const navEl = document.getElementById("navbar");
+        const navStyle = "bg-gray-900";
+        const navStyle2 = "shadow-2xl";
+        if (window.scrollY >= 100){
+            navEl.classList.add( navStyle, navStyle2 );
+        } else if(window.scrollY < 100){
+            navEl.classList.remove( navStyle, navStyle2 );
+        }
+    })
+
     return(
-        <div className="flex justify-between p-4 z-[100] fixed w-full">
+        <div id="navbar" className="transition ease-in-out delay-200 flex justify-between p-4 z-[100] fixed w-full">
              <Link to='/'>
                 <h1 className="text-myblue text-2xl md:text-5xl font-semibold cursor-pointer">Cineflix</h1>
             </Link>
